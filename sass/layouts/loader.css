@@ -1,0 +1,51 @@
+.loader-container {
+  position: absolute;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  min-height: 100%;
+  margin: 0;
+  padding: 0;
+  animation: loader-page 3s ease-in-out normal forwards;
+  opacity: 1;
+  background: #353535;
+  position: fixed;
+}
+
+.loader-container .logo-loader {
+  width: auto;
+  height: 30px;
+  margin-bottom: 20px;
+}
+
+.loader__circle1 {
+  width: 15px;
+  height: 15px;
+  animation: circle-sparkle 1s ease-in-out alternate-reverse infinite;
+  animation-delay: 0.5s;
+  border-radius: 50%;
+  background: #9356DC;
+}
+
+.loader__circle2 {
+  width: 15px;
+  height: 15px;
+  animation: circle-sparkle 1s ease-in-out alternate-reverse infinite;
+  animation-delay: 1s;
+  border-radius: 50%;
+  background: #FF79DA;
+}
+
+.loader__circle3 {
+  width: 15px;
+  height: 15px;
+  animation: circle-sparkle 1s ease-in-out alternate-reverse infinite;
+  animation-delay: 1.5s;
+  border-radius: 50%;
+  background: #99E2D0;
+}
+
+/*# sourceMappingURL=loader.css.map */

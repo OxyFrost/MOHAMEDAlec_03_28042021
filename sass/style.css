@@ -1,4 +1,86 @@
 @import url("https://fonts.googleapis.com/css2?family=Shrikhand&display=swap");
+.loader-container {
+  position: fixed;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  min-height: 100%;
+  margin: 0;
+  padding: 0;
+  animation: loader-page 2.25s ease-in-out normal forwards;
+  opacity: 1;
+  background: #353535;
+}
+.loader-container .logo-loader {
+  width: auto;
+  height: 30px;
+}
+
+.loader {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 60px;
+}
+.loader__logo {
+  font-family: Shrikhand, "cursive";
+  color: white;
+  margin-bottom: 50px;
+}
+.loader__circle1 {
+  width: 15px;
+  height: 15px;
+  margin-top: 50px;
+  animation: circle-sparkle 1s ease-in-out alternate-reverse infinite;
+  animation-delay: 0.5s;
+  border-radius: 50%;
+  background: #9356DC;
+}
+.loader__circle2 {
+  width: 15px;
+  height: 15px;
+  margin-top: 50px;
+  animation: circle-sparkle 1s ease-in-out alternate-reverse infinite;
+  animation-delay: 1s;
+  border-radius: 50%;
+  background: #FF79DA;
+}
+.loader__circle3 {
+  width: 15px;
+  height: 15px;
+  margin-top: 50px;
+  animation: circle-sparkle 1s ease-in-out alternate-reverse infinite;
+  animation-delay: 1.5s;
+  border-radius: 50%;
+  background: #99E2D0;
+}
+
+@keyframes circle-sparkle {
+  from {
+    opacity: 0.3;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes loader-page {
+  0% {
+    opacity: 1;
+  }
+  75% {
+    opacity: 1;
+  }
+  99% {
+    opacity: 0;
+  }
+  100% {
+    visibility: hidden;
+    opacity: 0;
+  }
+}
 .header {
   position: relative;
   grid-area: header;
@@ -28,6 +110,7 @@
   width: 100%;
   bottom: 0;
   color: white;
+  position: absolute;
 }
 .footer__container {
   max-width: 1440px;
@@ -60,6 +143,30 @@
   line-height: 2.5rem;
 }
 
+.content {
+  padding: 0 5px;
+}
+.content__text {
+  font-size: 1.125rem;
+  font-weight: 100;
+}
+
+.button {
+  width: 220px;
+  height: 50px;
+  color: #FFFFFF;
+  border: none;
+  border-radius: 30px;
+  background: linear-gradient(175deg, #FF79DA 10%, #9356DC 95%);
+  box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.3);
+  margin: 15px;
+  transition: all 0.4s;
+  cursor: pointer;
+}
+.button:hover {
+  transform: scale(1.1, 1.1);
+}
+
 body {
   margin: 0;
   font-family: "Roboto", sans-serif;
@@ -67,11 +174,8 @@ body {
 
 .container {
   max-width: 1440px;
+  text-align: center;
   margin: auto;
-}
-
-.content {
-  background-color: blue;
 }
 
 /*# sourceMappingURL=style.css.map */

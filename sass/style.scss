@@ -1,6 +1,8 @@
 //IMPORT
 @import url('https://fonts.googleapis.com/css2?family=Shrikhand&display=swap');
 @import "./utils/var.scss";
+@import "./utils/mixin.scss";
+@import "./layouts/loader.scss";
 @import "./layouts/header.scss";
 @import "./layouts/footer.scss";
 @import "./pages/home.scss";
@@ -14,10 +16,6 @@ body {
 
 .container {
     max-width: 1440px;
+    text-align: center;
     margin: auto;
-}
-
-
-.content {
-    background-color: blue;
 }

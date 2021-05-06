@@ -6,39 +6,63 @@
     <title>OhMyFood! - Accueil - OC</title>
 
     <!-- Importation CSS -->
-    <link href="sass/style.css" rel="stylesheet">
     <link href="css/all.css" rel="stylesheet"> <!-- FontAwesome -->
+    <link href="sass/style.css" rel="stylesheet">
 
 </head>
 <body>
-    <header class="header">
-        <div class="header__nav">
-            <a href="/index.html" class="">
-                <i class="fa fa-lg fa-arrow-left"></i>
-            </a>
+    <div class="loader-container">
+        <div class="logo-loader"><h1 class="loader__logo">ohmyfood</h1></div>
+        <div class="loader">
+            <div class="loader__circle1"></div>
+            <div class="loader__circle2"></div>
+            <div class="loader__circle3"></div>
         </div>
-        <h1 class="header__title">ohmyfood</h1>
+    </div>
+
+    <header class="header">
+        <h2 class="header__title">ohmyfood</h2>
     </header>
 
-    <article class="location">
-        <i class="fa fa-map-marker" aria-hidden="true"></i>
+    <div class="location">
+        <i aria-hidden="true" class="fa fa-map-marker"></i>
         <span><b>Paris, France</b></span>
-    </article>
+    </div>
+
     <div class="container">
         <article class="content">
-            qsfqsdf
+            <h1>Réservez le menu qui vous convient</h1>
+            <p class="content__text">Découvrez des restaurants d'exception, sélectionnés par nos soins.</p>
+            <button class="button">Explorer nos restaurants</button>
+            <article class="fonction">
+                <h2 class="fonction__title">Fonctionnement</h2>
+                <ol>
+                    <li>qsd</li>
+                    <li>qsd</li>
+                    <li>dqsdq</li>
+                </ol>
+            </article>
         </article>
     </div>
+
     <footer class="footer">
         <div class="footer__container">
             <h3 class="logo">ohmyfood</h3>
             <ul>
-                <li><a href="#"><i class="fa fa-utensils footer__icons" aria-hidden="true"></i>Proposer un restaurant</a></li>
-                <li><a href="#"><i class="fa fa-hands-helping footer__icons" aria-hidden="true"></i>Devenir partenaire</a></li>
+                <li><a href="#"><i aria-hidden="true" class="fa fa-utensils footer__icons"></i>Proposer un restaurant</a>
+                </li>
+                <li><a href="#"><i aria-hidden="true" class="fa fa-hands-helping footer__icons"></i>Devenir partenaire</a>
+                </li>
                 <li><a href="#">Mentions légales</a></li>
                 <li><a href="#">Contact</a></li>
             </ul>
         </div>
     </footer>
+    <script>
+        window.addEventListener("load", function () {
+            const loader = document.querySelector(".loader-container");
+            loader.className += " hidden"; // class "loader hidden"
+        });
+    </script>
 </body>
 </html>
