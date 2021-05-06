@@ -1,0 +1,28 @@
+.header {
+    position: relative;
+    grid-area: header;
+    box-shadow: -1px -10px 2rem 1px rgb(0 0 0 / 85%);
+    text-align: center;
+    align-items: center;
+    display: grid;
+    grid-template-columns: 0.2fr 1.6fr 0.2fr;
+    grid-template-areas:
+    "nav title .";
+
+    &__title {
+        font-family: $logo-titles;
+        grid-area: title;
+        margin: 10px;
+    }
+
+    &__nav {
+        grid-area: nav;
+
+        a {
+            text-decoration: none;
+            color: black;
+            vertical-align: middle;
+        }
+
+    }
+}

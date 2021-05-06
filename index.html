@@ -2,8 +2,8 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>OhMyFood! - OC</title>
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <title>OhMyFood! - Accueil - OC</title>
 
     <!-- Importation CSS -->
     <link href="sass/style.css" rel="stylesheet">
@@ -11,19 +11,34 @@
 
 </head>
 <body>
-    <div class="container">
-        <div class="grid-container">
-            <header class="header">
-                <h1 class="title">ohmyfood</h1>
-                <div class="location"><h4>qsdfqsfd</h4></div>
-            </header>
-            <article class="content">
-                qsfqsdf
-            </article>
-            <footer class="footer">
-                qsdfqsdf
-            </footer>
+    <header class="header">
+        <div class="header__nav">
+            <a href="/index.html" class="">
+                <i class="fa fa-lg fa-arrow-left"></i>
+            </a>
         </div>
+        <h1 class="header__title">ohmyfood</h1>
+    </header>
+
+    <article class="location">
+        <i class="fa fa-map-marker" aria-hidden="true"></i>
+        <span><b>Paris, France</b></span>
+    </article>
+    <div class="container">
+        <article class="content">
+            qsfqsdf
+        </article>
     </div>
+    <footer class="footer">
+        <div class="footer__container">
+            <h3 class="logo">ohmyfood</h3>
+            <ul>
+                <li><a href="#"><i class="fa fa-utensils footer__icons" aria-hidden="true"></i>Proposer un restaurant</a></li>
+                <li><a href="#"><i class="fa fa-hands-helping footer__icons" aria-hidden="true"></i>Devenir partenaire</a></li>
+                <li><a href="#">Mentions légales</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </div>
+    </footer>
 </body>
 </html>

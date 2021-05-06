@@ -1,59 +1,23 @@
-//VAR
-$primary-color: #9356DC;
-$second-color:#FF79DA;
-$third-color:#99E2D0;
-$logo-titles: "Shrikhand", "cursive";
-$font-text: 'Roboto', sans-serif;
+//IMPORT
+@import url('https://fonts.googleapis.com/css2?family=Shrikhand&display=swap');
+@import "./utils/var.scss";
+@import "./layouts/header.scss";
+@import "./layouts/footer.scss";
+@import "./pages/home.scss";
 
 // CSS
 
-body{
-  margin: 0;
-  font-family: $font-text;
+body {
+    margin: 0;
+    font-family: $font-text;
 }
 
-.grid-container {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-template-rows: 0.5fr 2fr 0.5fr;
-  gap: 10px 0;
-  align-items: center;
-  grid-template-areas:
-    "header header header header"
-    ". content content ."
-    "footer footer footer footer";
+.container {
+    max-width: 1440px;
+    margin: auto;
 }
 
-.header {
-  grid-area: header;
-  background-color: red;
-  text-align: center;
-  align-items: center;
-  display: grid;
-  grid-template-columns: 0.2fr 1.6fr 0.2fr;
-  grid-template-rows: 1fr 0.5fr;
-  gap: 0px 0px;
-  grid-template-areas:
-    "nav title ."
-    "location location location";
-  .title{
-    font-family: $logo-titles;
-    grid-area: title;
-  }
-  .location{
-    align-items: center;
-    background-color: darkgrey;
-    grid-area: location;
-    height: 100%;
-  }
-}
 
 .content {
-  grid-area: content;
-  background-color: blue;
-}
-
-.footer {
-  grid-area: footer;
-  background-color: green;
+    background-color: blue;
 }

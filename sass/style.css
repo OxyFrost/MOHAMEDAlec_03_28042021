@@ -1,47 +1,77 @@
+@import url("https://fonts.googleapis.com/css2?family=Shrikhand&display=swap");
+.header {
+  position: relative;
+  grid-area: header;
+  box-shadow: -1px -10px 2rem 1px rgba(0, 0, 0, 0.85);
+  text-align: center;
+  align-items: center;
+  display: grid;
+  grid-template-columns: 0.2fr 1.6fr 0.2fr;
+  grid-template-areas: "nav title .";
+}
+.header__title {
+  font-family: Shrikhand, "cursive";
+  grid-area: title;
+  margin: 10px;
+}
+.header__nav {
+  grid-area: nav;
+}
+.header__nav a {
+  text-decoration: none;
+  color: black;
+  vertical-align: middle;
+}
+
+.footer {
+  background-color: #353535;
+  width: 100%;
+  bottom: 0;
+  color: white;
+}
+.footer__container {
+  max-width: 1440px;
+  margin: auto;
+  padding: 15px;
+}
+.footer__container .logo {
+  font-family: Shrikhand, "cursive";
+}
+.footer__container ul {
+  list-style: none;
+  padding-left: 0;
+}
+.footer__container ul li {
+  margin-bottom: 5px;
+}
+.footer__container ul li a {
+  text-decoration: none;
+  color: white;
+}
+.footer__icons {
+  padding-right: 5px;
+  width: 20px;
+}
+
+.location {
+  text-align: center;
+  height: 2.5rem;
+  background-color: #f3f3f3;
+  line-height: 2.5rem;
+}
+
 body {
   margin: 0;
   font-family: "Roboto", sans-serif;
 }
 
-.grid-container {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-template-rows: 0.5fr 2fr 0.5fr;
-  gap: 10px 0;
-  align-items: center;
-  grid-template-areas: "header header header header" ". content content ." "footer footer footer footer";
-}
-
-.header {
-  grid-area: header;
-  background-color: red;
-  text-align: center;
-  align-items: center;
-  display: grid;
-  grid-template-columns: 0.2fr 1.6fr 0.2fr;
-  grid-template-rows: 1fr 0.5fr;
-  gap: 0px 0px;
-  grid-template-areas: "nav title ." "location location location";
-}
-.header .title {
-  font-family: "Shrikhand", "cursive";
-  grid-area: title;
-}
-.header .location {
-  align-items: center;
-  background-color: darkgrey;
-  grid-area: location;
-  height: 100%;
+.container {
+  max-width: 1440px;
+  margin: auto;
 }
 
 .content {
-  grid-area: content;
   background-color: blue;
-}
-
-.footer {
-  grid-area: footer;
-  background-color: green;
 }
 
 /*# sourceMappingURL=style.css.map */
