@@ -1,0 +1,48 @@
+.location {
+    text-align: center;
+    height: 2.5rem;
+    background-color: #f3f3f3;
+    line-height:2.5rem;
+}
+
+.content{
+    padding: 0 5px;
+
+    &__text{
+        font-size: 1.125rem;
+        font-weight: 100;
+    }
+}
+
+.button{
+    @include button();
+}
+
+.fonction{
+
+    ol {
+
+        @include reset_list();
+        counter-reset: compteListe;
+
+        li{
+            background-color: grey;
+        }
+
+
+        li::before {
+            counter-increment: compteListe;
+            content: counter(compteListe) " ";
+            background: #9356dc;
+            height: 1.5rem;
+            width: 1.5rem;
+            border-radius: 100px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+            position: absolute;
+        }
+    }
+
+}
