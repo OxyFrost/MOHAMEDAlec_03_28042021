@@ -21,19 +21,26 @@
 .fonction{
 
     ol {
-
         @include reset_list();
         counter-reset: compteListe;
+        display: grid;
+        grid-template-columns: 350px;
+        grid-template-rows: repeat(3, auto);
+    }
 
-        li{
-            background-color: grey;
-        }
+    &__step{
+        padding: 1.5rem;
+        margin: 1rem 0 1rem 1.25rem;
+        box-shadow: 0.25rem 0.25rem 0.5rem rgba(0,0,0,.125);
+        border-radius: 1.25rem;
+        background-color: #f6f6f6;
+        display: flex;
+        position: relative;
 
-
-        li::before {
+        &::before {
             counter-increment: compteListe;
             content: counter(compteListe) " ";
-            background: #9356dc;
+            position: absolute;
             height: 1.5rem;
             width: 1.5rem;
             border-radius: 100px;
@@ -41,8 +48,20 @@
             justify-content: center;
             align-items: center;
             color: #fff;
-            position: absolute;
+            background: #9356dc;
+            left: -0.50rem;
         }
+
+    }
+
+    &__icon{
+        width: 25px;
+        color: dimgrey;
+        padding-left: 10px;
+    }
+²
+    &__text{
+        padding-left: 15px;
     }
 
 }

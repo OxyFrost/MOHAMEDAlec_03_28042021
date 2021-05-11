@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Shrikhand&display=swap");
 .loader-container {
   position: fixed;
@@ -110,7 +111,7 @@
   width: 100%;
   bottom: 0;
   color: white;
-  position: absolute;
+  position: relative;
 }
 .footer__container {
   max-width: 1440px;
@@ -173,14 +174,23 @@
   padding-left: 0;
   margin: 0;
   counter-reset: compteListe;
+  display: grid;
+  grid-template-columns: 350px;
+  grid-template-rows: repeat(3, auto);
 }
-.fonction ol li {
-  background-color: grey;
+.fonction__step {
+  padding: 1.5rem;
+  margin: 1rem 0 1rem 1.25rem;
+  box-shadow: 0.25rem 0.25rem 0.5rem rgba(0, 0, 0, 0.125);
+  border-radius: 1.25rem;
+  background-color: #f6f6f6;
+  display: flex;
+  position: relative;
 }
-.fonction ol li::before {
+.fonction__step::before {
   counter-increment: compteListe;
   content: counter(compteListe) " ";
-  background: #9356dc;
+  position: absolute;
   height: 1.5rem;
   width: 1.5rem;
   border-radius: 100px;
@@ -188,7 +198,16 @@
   justify-content: center;
   align-items: center;
   color: #fff;
-  position: absolute;
+  background: #9356dc;
+  left: -0.5rem;
+}
+.fonction__icon {
+  width: 25px;
+  color: dimgrey;
+  padding-left: 10px;
+}
+² .fonction__text {
+  padding-left: 15px;
 }
 
 body {
