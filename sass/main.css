@@ -1,4 +1,32 @@
 @import url("https://fonts.googleapis.com/css2?family=Shrikhand&display=swap");
+@keyframes circle-sparkle {
+  from {
+    opacity: 0.3;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes loader-page {
+  0% {
+    opacity: 1;
+  }
+  75% {
+    opacity: 1;
+  }
+  99% {
+    opacity: 0;
+  }
+  100% {
+    visibility: hidden;
+    opacity: 0;
+  }
+}
+@keyframes empty-heart {
+  100% {
+    opacity: 0;
+  }
+}
 .loader-container {
   position: fixed;
   z-index: 20;
@@ -58,29 +86,6 @@
   background: #99E2D0;
 }
 
-@keyframes circle-sparkle {
-  from {
-    opacity: 0.3;
-  }
-  to {
-    opacity: 1;
-  }
-}
-@keyframes loader-page {
-  0% {
-    opacity: 1;
-  }
-  75% {
-    opacity: 1;
-  }
-  99% {
-    opacity: 0;
-  }
-  100% {
-    visibility: hidden;
-    opacity: 0;
-  }
-}
 .header {
   position: relative;
   grid-area: header;
@@ -195,7 +200,7 @@
 }
 .fonction__step {
   padding: 1.5rem;
-  margin: 1rem 0 1rem 1.25rem;
+  margin: 1rem 1.5rem 1rem 1.5rem;
   box-shadow: 0.25rem 0.25rem 0.5rem rgba(0, 0, 0, 0.125);
   border-radius: 1.25rem;
   background-color: #f6f6f6;
@@ -207,11 +212,6 @@
 .fonction__step:hover {
   box-shadow: 10px 10px 20px 0px rgba(0, 0, 0, 0.4);
   background-color: rgba(147, 86, 220, 0.15);
-}
-@media (max-width: 768px) {
-  .fonction__step {
-    margin-left: 10px;
-  }
 }
 .fonction__step::before {
   counter-increment: compteListe;
@@ -238,7 +238,7 @@
 
 .restaurant {
   background-color: #f3f3f3;
-  width: 1440px;
+  max-width: 1440px;
   padding-top: 5px;
   border-radius: 15px;
   margin: 15px auto;
@@ -297,6 +297,24 @@
 }
 .restaurant .card__icon {
   margin: 15px;
+}
+.restaurant .card__icon .show {
+  position: absolute;
+}
+.restaurant .card__icon .hidden::before {
+  position: relative;
+  opacity: 0;
+  transform-origin: center bottom;
+  transition: transform 0.6s linear, opacity 0.6s linear;
+  background: linear-gradient(190deg, #9356DC 0%, #FF79DA 95%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.restaurant .card__icon:hover .hidden::before {
+  opacity: 1;
+}
+.restaurant .card__icon:hover .show {
+  animation: empty-heart 0.1s 0.5s linear forwards;
 }
 .restaurant .card:hover {
   box-shadow: 6px 9px 20px 5px rgba(0, 0, 0, 0.4);
