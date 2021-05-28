@@ -1,0 +1,25 @@
+.iconLike{
+    margin: 15px;
+
+    .show{position: absolute}
+
+    .hidden::before{
+        position: relative;
+        opacity: 0;
+        transform-origin: center bottom;
+        transition: transform .6s linear, opacity .6s linear;
+        background: linear-gradient(190deg, $primary-color 0%, $second-color 95%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    &:hover{
+        .hidden::before{
+            opacity: 1;
+        }
+
+        .show {
+            animation: empty-heart .1s .5s linear forwards;
+        }
+    }
+}

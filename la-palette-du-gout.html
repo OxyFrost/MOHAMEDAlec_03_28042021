@@ -3,42 +3,73 @@
 <head>
     <meta charset="UTF-8">
     <meta content="width=device-width, initial-scale=1" name="viewport">
-    <title>OhMyFood! - Accueil - OC</title>
+    <title>OhMyFood! - La Palette du Goût - OC</title>
 
     <!-- Importation CSS -->
-    <link href="sass/style.css" rel="stylesheet">
     <link href="css/all.css" rel="stylesheet"> <!-- FontAwesome -->
+    <link href="sass/main.css" rel="stylesheet">
 
 </head>
 <body>
-<header class="header">
-    <div class="header__nav">
-        <a href="index.html" class="">
-            <i class="fa fa-lg fa-arrow-left"></i>
-        </a>
-    </div>
-    <h1 class="header__title">ohmyfood</h1>
-</header>
+    <header class="header">
+        <div class="header__nav">
+            <a class="" href="index.html">
+                <i class="fa fa-lg fa-arrow-left"></i>
+            </a>
+        </div>
+        <h1 class="header__title">ohmyfood</h1>
+    </header>
 
-<article class="location">
-    <i class="fa fa-map-marker" aria-hidden="true"></i>
-    <span><b>Paris, France</b></span>
-</article>
-<div class="container">
-    <article class="content">
-        qsfqsdf
-    </article>
-</div>
-<footer class="footer">
-    <div class="footer__container">
-        <h3 class="logo">ohmyfood</h3>
-        <ul>
-            <li><a href="#"><i class="fa fa-utensils footer__icons" aria-hidden="true"></i>Proposer un restaurant</a></li>
-            <li><a href="#"><i class="fa fa-hands-helping footer__icons" aria-hidden="true"></i>Devenir partenaire</a></li>
-            <li><a href="#">Mentions légales</a></li>
-            <li><a href="#">Contact</a></li>
-        </ul>
-    </div>
-</footer>
+    <img alt="La palette du goût" class="shopImg" src="img/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg">
+    <section class="shopContainer">
+        <div class="shopHeader">
+            <h2 class="shopHeader__title">La Palette du goût</h2>
+            <div class="iconLike">
+                <i class="far fa-lg fa-heart show"></i>
+                <i class="fas fa-lg fa-heart hidden"></i>
+            </div>
+        </div>
+        <div class="shopMenu">
+            <div class="categorie">
+                <h3 class="categorie__title">Entrées</h3>
+                <div class="card">
+                    <h4 class="card__title">qsdqs</h4>
+                    <div class="cardContent">
+                        <p class="card__desc">qsdqs</p>
+                        <p class="card__price">25<b>€</b></p>
+                    </div>
+                </div>
+                <div class="card"></div>
+                <div class="card"></div>
+            </div>
+            <div class="categorie">
+                <h3 class="categorie__title">Plats</h3>
+                <div class="card"></div>
+                <div class="card"></div>
+                <div class="card"></div>
+            </div>
+            <div class="categorie">
+                <h3 class="categorie__title">Desserts</h3>
+                <div class="card"></div>
+                <div class="card"></div>
+                <div class="card"></div>
+            </div>
+        </div>
+
+    </section>
+
+    <footer class="footer">
+        <div class="footer__container">
+            <h3 class="logo">ohmyfood</h3>
+            <ul>
+                <li><a href="#"><i aria-hidden="true" class="fa fa-utensils footer__icons"></i>Proposer un restaurant</a>
+                </li>
+                <li><a href="#"><i aria-hidden="true" class="fa fa-hands-helping footer__icons"></i>Devenir partenaire</a>
+                </li>
+                <li><a href="#">Mentions légales</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </div>
+    </footer>
 </body>
 </html>

@@ -86,6 +86,28 @@
   background: #99E2D0;
 }
 
+.iconLike {
+  margin: 15px;
+}
+.iconLike .show {
+  position: absolute;
+}
+.iconLike .hidden::before {
+  position: relative;
+  opacity: 0;
+  transform-origin: center bottom;
+  transition: transform 0.6s linear, opacity 0.6s linear;
+  background: linear-gradient(190deg, #9356DC 0%, #FF79DA 95%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.iconLike:hover .hidden::before {
+  opacity: 1;
+}
+.iconLike:hover .show {
+  animation: empty-heart 0.1s 0.5s linear forwards;
+}
+
 .header {
   position: relative;
   grid-area: header;
@@ -295,27 +317,6 @@
 .restaurant .card__text {
   margin: 10px 0;
 }
-.restaurant .card__icon {
-  margin: 15px;
-}
-.restaurant .card__icon .show {
-  position: absolute;
-}
-.restaurant .card__icon .hidden::before {
-  position: relative;
-  opacity: 0;
-  transform-origin: center bottom;
-  transition: transform 0.6s linear, opacity 0.6s linear;
-  background: linear-gradient(190deg, #9356DC 0%, #FF79DA 95%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-.restaurant .card__icon:hover .hidden::before {
-  opacity: 1;
-}
-.restaurant .card__icon:hover .show {
-  animation: empty-heart 0.1s 0.5s linear forwards;
-}
 .restaurant .card:hover {
   box-shadow: 6px 9px 20px 5px rgba(0, 0, 0, 0.4);
 }
@@ -325,6 +326,89 @@
     width: 100%;
     position: relative;
   }
+}
+
+.shopImg {
+  max-width: 100%;
+  max-height: 32rem;
+  width: 100%;
+  object-fit: cover;
+}
+
+.shopContainer {
+  max-width: 1280px;
+  margin: -4rem auto 0 auto;
+  border-radius: 2rem 2rem 0 0;
+  background-color: #f6f6f6;
+  z-index: 1;
+  position: relative;
+}
+.shopContainer .shopHeader {
+  padding: 1rem 2rem 0 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.shopContainer .shopHeader__title {
+  font-family: Shrikhand, "cursive";
+}
+
+.shopMenu {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 1rem;
+}
+.shopMenu .categorie {
+  padding: 0 1rem;
+}
+.shopMenu .categorie__title {
+  text-transform: uppercase;
+  position: relative;
+  font-weight: 400;
+}
+.shopMenu .categorie__title::after {
+  content: "";
+  left: 0;
+  bottom: -10px;
+  position: absolute;
+  height: 4px !important;
+  width: 15%;
+  background-color: #99E2D0;
+  transition: 0.4s ease-out all 0.1s;
+}
+.shopMenu .categorie__title:hover::after {
+  width: 25%;
+  transition: 0.5s ease all;
+}
+.shopMenu .categorie .card {
+  background: #fff;
+  margin: 1rem;
+  padding: 1rem;
+  border-radius: 15px;
+  box-shadow: 0.25rem 0.25rem 0.5rem rgba(0, 0, 0, 0.125);
+}
+.shopMenu .categorie .card__title {
+  margin: 0;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.shopMenu .categorie .card .cardContent {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.shopMenu .categorie .card__desc {
+  margin: 0;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.shopMenu .categorie .card__price {
+  margin: 0;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
 
 body {
