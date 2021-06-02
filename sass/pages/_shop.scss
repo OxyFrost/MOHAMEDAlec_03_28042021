@@ -61,20 +61,20 @@
             background: #fff;
             margin: 1rem;
             padding: 1rem;
-            border-radius: 15px;
+            border-radius: 10px;
+            display: flex;
             box-shadow: 0.25rem 0.25rem 0.5rem rgba(0,0,0,.125);
+            overflow: hidden;
 
-            &__title{
-                margin: 0;
+            &__header{
                 white-space: nowrap;
                 text-overflow: ellipsis;
                 overflow: hidden;
+                flex: 1;
             }
 
-            .cardContent{
-                display: flex;
-                flex-direction: row;
-                justify-content: space-between;
+            &__title{
+                margin: 0;
             }
 
             &__desc{
@@ -85,13 +85,63 @@
             }
 
             &__price{
-                margin: 0;
-                white-space: nowrap;
-                text-overflow: ellipsis;
-                overflow: hidden;
+                font-weight: 700;
+                display: flex;
+                justify-content: flex-end;
+                align-items: flex-end;
+                padding-left: .5rem;
             }
 
+            &__button{
+                background-color: $third-color;
+                margin: -1rem -5rem -1rem 1rem;
+                width: 4rem;
+                display:flex;
+                align-items:center;
+                justify-content:center;
+                transition-duration: 0.5s;
+
+                .wrapIcon{
+                    height: 1.6rem;
+                    width: 1.6rem;
+                    background-color: #fff;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    border-radius: 100px;
+
+                }
+
+            }
+
+            &__icon{
+                color: $third-color;
+                transition-duration: .5s;
+            }
+
+            &:hover{
+                .card__button{
+                    margin-right: -1rem;
+                }
+
+                .card__icon{
+                    transform: rotate(360deg);
+                }
+
+            }
+
+
         }
+    }
+
+
+
+    @include breakpoint-tablet{
+        grid-template-columns: repeat(2,1fr);
+    }
+
+    @include  breakpoint-phone{
+        grid-template-columns: repeat(1,1fr);
     }
 }
 

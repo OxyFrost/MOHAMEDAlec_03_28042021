@@ -208,13 +208,13 @@
   grid-template-columns: repeat(3, 375px);
   justify-content: center;
 }
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .fonction ol {
     grid-template-rows: repeat(3, auto);
     grid-template-columns: 95%;
   }
 }
-@media (max-width: 375px) {
+@media (max-width: 560px) {
   .fonction ol {
     grid-template-rows: repeat(3, auto);
     grid-template-columns: 350px;
@@ -320,7 +320,7 @@
 .restaurant .card:hover {
   box-shadow: 6px 9px 20px 5px rgba(0, 0, 0, 0.4);
 }
-@media (max-width: 375px) {
+@media (max-width: 560px) {
   .restaurant {
     border-radius: unset;
     width: 100%;
@@ -384,19 +384,19 @@
   background: #fff;
   margin: 1rem;
   padding: 1rem;
-  border-radius: 15px;
+  border-radius: 10px;
+  display: flex;
   box-shadow: 0.25rem 0.25rem 0.5rem rgba(0, 0, 0, 0.125);
+  overflow: hidden;
 }
-.shopMenu .categorie .card__title {
-  margin: 0;
+.shopMenu .categorie .card__header {
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
+  flex: 1;
 }
-.shopMenu .categorie .card .cardContent {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+.shopMenu .categorie .card__title {
+  margin: 0;
 }
 .shopMenu .categorie .card__desc {
   margin: 0;
@@ -405,10 +405,49 @@
   overflow: hidden;
 }
 .shopMenu .categorie .card__price {
-  margin: 0;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  overflow: hidden;
+  font-weight: 700;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  padding-left: 0.5rem;
+}
+.shopMenu .categorie .card__button {
+  background-color: #99E2D0;
+  margin: -1rem -5rem -1rem 1rem;
+  width: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition-duration: 0.5s;
+}
+.shopMenu .categorie .card__button .wrapIcon {
+  height: 1.6rem;
+  width: 1.6rem;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 100px;
+}
+.shopMenu .categorie .card__icon {
+  color: #99E2D0;
+  transition-duration: 0.5s;
+}
+.shopMenu .categorie .card:hover .card__button {
+  margin-right: -1rem;
+}
+.shopMenu .categorie .card:hover .card__icon {
+  transform: rotate(360deg);
+}
+@media (max-width: 1024px) {
+  .shopMenu {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 560px) {
+  .shopMenu {
+    grid-template-columns: repeat(1, 1fr);
+  }
 }
 
 body {
