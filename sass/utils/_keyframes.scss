@@ -1,0 +1,26 @@
+@keyframes circle-sparkle {
+    from {
+        opacity: 0.3; }
+    to {
+        opacity: 1; } }
+
+@keyframes loader-page {
+    0% {
+        opacity: 1;
+    }
+    75% {
+        opacity: 1;
+    }
+    99% {
+        opacity: 0;
+    }
+    100% {
+        visibility: hidden;
+        opacity: 0; }
+}
+
+@keyframes empty-heart {
+    100% {
+        opacity: 0;
+    }
+}
