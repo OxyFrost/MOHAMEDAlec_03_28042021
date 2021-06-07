@@ -1,11 +1,22 @@
-//IMPORT
+//IMPORTS
 @import url('https://fonts.googleapis.com/css2?family=Shrikhand&display=swap');
+
+//UTILS
 @import "./utils/var";
 @import "./utils/mixin";
-@import "./layouts/loader";
+@import "./utils/keyframes";
+
+//COMPONENTS
+@import "./components/loader";
+@import "components/like";
+
+//LAYOUTS
 @import "./layouts/header";
 @import "./layouts/footer";
+
+//PAGES
 @import "./pages/home";
+@import "./pages/shop";
 
 // CSS
 

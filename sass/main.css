@@ -1,4 +1,32 @@
 @import url("https://fonts.googleapis.com/css2?family=Shrikhand&display=swap");
+@keyframes circle-sparkle {
+  from {
+    opacity: 0.3;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes loader-page {
+  0% {
+    opacity: 1;
+  }
+  75% {
+    opacity: 1;
+  }
+  99% {
+    opacity: 0;
+  }
+  100% {
+    visibility: hidden;
+    opacity: 0;
+  }
+}
+@keyframes empty-heart {
+  100% {
+    opacity: 0;
+  }
+}
 .loader-container {
   position: fixed;
   z-index: 20;
@@ -58,29 +86,28 @@
   background: #99E2D0;
 }
 
-@keyframes circle-sparkle {
-  from {
-    opacity: 0.3;
-  }
-  to {
-    opacity: 1;
-  }
+.iconLike {
+  margin: 15px;
 }
-@keyframes loader-page {
-  0% {
-    opacity: 1;
-  }
-  75% {
-    opacity: 1;
-  }
-  99% {
-    opacity: 0;
-  }
-  100% {
-    visibility: hidden;
-    opacity: 0;
-  }
+.iconLike .show {
+  position: absolute;
 }
+.iconLike .hidden::before {
+  position: relative;
+  opacity: 0;
+  transform-origin: center bottom;
+  transition: transform 0.6s linear, opacity 0.6s linear;
+  background: linear-gradient(190deg, #9356DC 0%, #FF79DA 95%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.iconLike:hover .hidden::before {
+  opacity: 1;
+}
+.iconLike:hover .show {
+  animation: empty-heart 0.1s 0.5s linear forwards;
+}
+
 .header {
   position: relative;
   grid-area: header;
@@ -181,13 +208,13 @@
   grid-template-columns: repeat(3, 375px);
   justify-content: center;
 }
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .fonction ol {
     grid-template-rows: repeat(3, auto);
     grid-template-columns: 95%;
   }
 }
-@media (max-width: 375px) {
+@media (max-width: 560px) {
   .fonction ol {
     grid-template-rows: repeat(3, auto);
     grid-template-columns: 350px;
@@ -195,7 +222,7 @@
 }
 .fonction__step {
   padding: 1.5rem;
-  margin: 1rem 0 1rem 1.25rem;
+  margin: 1rem 1.5rem 1rem 1.5rem;
   box-shadow: 0.25rem 0.25rem 0.5rem rgba(0, 0, 0, 0.125);
   border-radius: 1.25rem;
   background-color: #f6f6f6;
@@ -207,11 +234,6 @@
 .fonction__step:hover {
   box-shadow: 10px 10px 20px 0px rgba(0, 0, 0, 0.4);
   background-color: rgba(147, 86, 220, 0.15);
-}
-@media (max-width: 768px) {
-  .fonction__step {
-    margin-left: 10px;
-  }
 }
 .fonction__step::before {
   counter-increment: compteListe;
@@ -238,7 +260,7 @@
 
 .restaurant {
   background-color: #f3f3f3;
-  width: 1440px;
+  max-width: 1440px;
   padding-top: 5px;
   border-radius: 15px;
   margin: 15px auto;
@@ -295,17 +317,136 @@
 .restaurant .card__text {
   margin: 10px 0;
 }
-.restaurant .card__icon {
-  margin: 15px;
-}
 .restaurant .card:hover {
   box-shadow: 6px 9px 20px 5px rgba(0, 0, 0, 0.4);
 }
-@media (max-width: 375px) {
+@media (max-width: 560px) {
   .restaurant {
     border-radius: unset;
     width: 100%;
     position: relative;
+  }
+}
+
+.shopImg {
+  max-width: 100%;
+  max-height: 32rem;
+  width: 100%;
+  object-fit: cover;
+}
+
+.shopContainer {
+  max-width: 1280px;
+  margin: -4rem auto 0 auto;
+  border-radius: 2rem 2rem 0 0;
+  background-color: #f6f6f6;
+  z-index: 1;
+  position: relative;
+}
+.shopContainer .shopHeader {
+  padding: 1rem 2rem 0 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.shopContainer .shopHeader__title {
+  font-family: Shrikhand, "cursive";
+}
+
+.shopMenu {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 1rem;
+}
+.shopMenu .categorie {
+  padding: 0 1rem;
+}
+.shopMenu .categorie__title {
+  text-transform: uppercase;
+  position: relative;
+  font-weight: 400;
+}
+.shopMenu .categorie__title::after {
+  content: "";
+  left: 0;
+  bottom: -10px;
+  position: absolute;
+  height: 4px !important;
+  width: 15%;
+  background-color: #99E2D0;
+  transition: 0.4s ease-out all 0.1s;
+}
+.shopMenu .categorie__title:hover::after {
+  width: 25%;
+  transition: 0.5s ease all;
+}
+.shopMenu .categorie .card {
+  background: #fff;
+  margin: 1rem;
+  padding: 1rem;
+  border-radius: 10px;
+  display: flex;
+  box-shadow: 0.25rem 0.25rem 0.5rem rgba(0, 0, 0, 0.125);
+  overflow: hidden;
+}
+.shopMenu .categorie .card__header {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  flex: 1;
+}
+.shopMenu .categorie .card__title {
+  margin: 0;
+}
+.shopMenu .categorie .card__desc {
+  margin: 0;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.shopMenu .categorie .card__price {
+  font-weight: 700;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  padding-left: 0.5rem;
+}
+.shopMenu .categorie .card__button {
+  background-color: #99E2D0;
+  margin: -1rem -5rem -1rem 1rem;
+  width: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition-duration: 0.5s;
+}
+.shopMenu .categorie .card__button .wrapIcon {
+  height: 1.6rem;
+  width: 1.6rem;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 100px;
+}
+.shopMenu .categorie .card__icon {
+  color: #99E2D0;
+  transition-duration: 0.5s;
+}
+.shopMenu .categorie .card:hover .card__button {
+  margin-right: -1rem;
+}
+.shopMenu .categorie .card:hover .card__icon {
+  transform: rotate(360deg);
+}
+@media (max-width: 1024px) {
+  .shopMenu {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 560px) {
+  .shopMenu {
+    grid-template-columns: repeat(1, 1fr);
   }
 }
 
