@@ -65,23 +65,31 @@
             display: flex;
             box-shadow: 0.25rem 0.25rem 0.5rem rgba(0,0,0,.125);
             overflow: hidden;
+            position: relative;
 
             &__header{
                 white-space: nowrap;
                 text-overflow: ellipsis;
                 overflow: hidden;
                 flex: 1;
+
             }
 
             &__title{
                 margin: 0;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+                overflow: hidden;
+                width: 70%;
             }
 
             &__desc{
                 margin: 0;
-                white-space: nowrap;
                 text-overflow: ellipsis;
                 overflow: hidden;
+                white-space: nowrap;
+
+
             }
 
             &__price{
@@ -144,6 +152,18 @@
         grid-template-columns: repeat(1,1fr);
     }
 }
+
+    .fadeIn-1 {
+        animation: fadeIn 1s;
+    }
+
+    .fadeIn-2 {
+        animation: fadeIn 1.50s;
+    }
+
+    .fadeIn-3 {
+        animation: fadeIn 2s;
+    }
 
 
 
