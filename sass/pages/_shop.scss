@@ -1,0 +1,175 @@
+.shopImg{
+    max-width: 100%;
+    max-height: 32rem;
+    width: 100%;
+    object-fit: cover;
+}
+
+.shopContainer{
+    max-width: 1280px;
+    margin: -4rem auto 0 auto;
+    border-radius: 2rem 2rem 0 0;
+    background-color: #f6f6f6;
+    z-index: 1;
+    position: relative;
+
+    .shopHeader{
+        padding: 1rem 2rem 0 1rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        &__title{
+            font-family: $logo-titles;
+        }
+    }
+}
+
+.shopMenu{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    column-gap: 1rem;
+
+    .categorie{
+
+        &__title{
+            text-transform: uppercase;
+            position: relative;
+            font-weight: 400;
+            padding-left: 1rem;
+
+            &::after{
+                content: "";
+                left: 15px;
+                bottom: -10px;
+                position: absolute;
+                height: 4px !important;
+                width: 15%;
+                background-color: $third-color;
+                transition: 0.4s ease-out all .1s;
+            }
+
+            &:hover{
+                &::after{
+                    width: 25%;
+                    transition: 0.5s ease all;
+                }
+
+            }
+        }
+
+        .card{
+            background: #fff;
+            margin: 1rem 0rem 1rem 1rem;
+            border-radius: 10px;
+            display: flex;
+            box-shadow: 0.25rem 0.25rem 0.5rem rgba(0,0,0,.125);
+            overflow: hidden;
+            max-width: 85%;
+
+            &__header{
+                white-space: nowrap;
+                text-overflow: ellipsis;
+                overflow: hidden;
+                flex: 1;
+                padding: 1rem 0rem 1rem 1rem;
+
+            }
+
+            &__title{
+                margin: 0;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+                overflow: hidden;
+            }
+
+            &__desc{
+                margin: 0;
+                text-overflow: ellipsis;
+                overflow: hidden;
+                white-space: nowrap;
+            }
+
+            &__price{
+                font-weight: 700;
+                display: flex;
+                justify-content: flex-end;
+                align-items: flex-end;
+                padding: 1rem 1rem 1rem 1rem;
+            }
+
+            &__button{
+                background-color: $third-color;
+                margin: -1rem -5rem -1rem 1rem;
+                width: 4rem;
+                display:flex;
+                align-items:center;
+                justify-content:center;
+                transition-duration: 0.5s;
+
+                .wrapIcon{
+                    height: 1.6rem;
+                    width: 1.6rem;
+                    background-color: #fff;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    border-radius: 100px;
+
+                }
+
+            }
+
+            &__icon{
+                color: $third-color;
+                transition-duration: .5s;
+            }
+
+            &:hover{
+
+                .card__button{
+                    margin : 0;
+                }
+
+                .card__icon{
+                    transform: rotate(360deg);
+                }
+
+            }
+
+            @include breakpoint-tablet{
+                grid-template-columns: repeat(2,1fr);
+            }
+
+            @include  breakpoint-phone{
+                grid-template-columns: repeat(1,1fr);
+            }
+
+
+        }
+    }
+
+
+
+    @include breakpoint-tablet{
+        grid-template-columns: repeat(2,1fr);
+    }
+
+    @include  breakpoint-phone{
+        grid-template-columns: repeat(1,1fr);
+    }
+}
+
+    .fadeIn-1 {
+        animation: fadeIn 1s;
+    }
+
+    .fadeIn-2 {
+        animation: fadeIn 1.50s;
+    }
+
+    .fadeIn-3 {
+        animation: fadeIn 2s;
+    }
+
+
+

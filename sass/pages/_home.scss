@@ -20,22 +20,44 @@
 
 .fonction{
 
+    &__title{
+        @include  title-align();
+    }
+
     ol {
         @include reset_list();
         counter-reset: compteListe;
         display: grid;
-        grid-template-columns: 350px;
-        grid-template-rows: repeat(3, auto);
+        grid-template-columns: repeat(3,375px);
+        justify-content: center;
+
+        @include breakpoint-tablet{
+            grid-template-rows: repeat(3,auto);
+            grid-template-columns: 95%;
+        }
+
+        @include breakpoint-phone{
+            grid-template-rows: repeat(3, auto);
+            grid-template-columns: 350px;
+        }
     }
 
     &__step{
         padding: 1.5rem;
-        margin: 1rem 0 1rem 1.25rem;
+        margin: 1rem 1.50rem 1rem 1.50rem;
         box-shadow: 0.25rem 0.25rem 0.5rem rgba(0,0,0,.125);
         border-radius: 1.25rem;
         background-color: #f6f6f6;
         display: flex;
+        float:left;
         position: relative;
+        transition: 0.2s ease-in-out;
+
+        &:hover{
+            box-shadow: 10px 10px 20px 0px rgba(0,0,0,0.4);
+            background-color: rgba(147, 86, 220, 0.15);
+        }
+
 
         &::before {
             counter-increment: compteListe;
@@ -48,7 +70,7 @@
             justify-content: center;
             align-items: center;
             color: #fff;
-            background: #9356dc;
+            background: $primary-color;
             left: -0.50rem;
         }
 
@@ -58,10 +80,91 @@
         width: 25px;
         color: dimgrey;
         padding-left: 10px;
+
     }
-²
+
     &__text{
         padding-left: 15px;
+    }
+
+}
+
+.restaurant{
+    background-color: #f3f3f3;
+    max-width: 1440px;
+    padding-top: 5px;
+    border-radius: 15px;
+    margin: 15px auto;
+
+    &__title{
+        @include title-align();
+    }
+
+    .cards{
+        display: flex;
+        flex-flow: row wrap;
+        justify-content:center;
+        width: 100%;
+        gap:1.5rem;
+    }
+
+    .card{
+        background-color: #ffffff;
+        border-radius: 20px;
+        width: 300px;
+        height: 225px;
+        box-shadow: 0 3px 6px rgb(0 0 0 / 16%), 0 3px 6px rgb(0 0 0 / 23%);
+        margin-bottom: 15px;
+        transition: 0.2s ease-in-out;
+
+        a{
+            text-decoration: none;
+            color: black;
+        }
+
+        img{
+            width: 300px;
+            height: 155px;
+            border-radius: 20px 20px 0 0;
+            object-fit: cover;
+        }
+
+        &__new{
+            background-color: #99e2d0;
+            position: absolute;
+            border-radius: 5px;
+            padding: 0.5rem 1rem;
+            margin-top: 1rem;
+            margin-left: -7rem;
+            font-weight: bold;
+            font-size: 0.9rem;
+            color: #00a87e;
+        }
+
+        &__info{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-left: 1em;
+        }
+
+        &__title{
+            margin: 5px 0;
+        }
+
+        &__text{
+            margin: 10px 0;
+        }
+
+        &:hover{
+            box-shadow: 6px 9px 20px 5px rgba(0,0,0,0.4);
+        }
+    }
+
+    @include breakpoint_phone {
+        border-radius: unset;
+        width: 100%;
+        position: relative;
     }
 
 }
