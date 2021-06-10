@@ -303,6 +303,7 @@
   width: 300px;
   height: 155px;
   border-radius: 20px 20px 0 0;
+  object-fit: cover;
 }
 .restaurant .card__new {
   background-color: #99e2d0;
@@ -368,17 +369,15 @@
   grid-template-columns: repeat(3, 1fr);
   column-gap: 1rem;
 }
-.shopMenu .categorie {
-  padding: 0 1rem;
-}
 .shopMenu .categorie__title {
   text-transform: uppercase;
   position: relative;
   font-weight: 400;
+  padding-left: 1rem;
 }
 .shopMenu .categorie__title::after {
   content: "";
-  left: 0;
+  left: 15px;
   bottom: -10px;
   position: absolute;
   height: 4px !important;
@@ -392,26 +391,25 @@
 }
 .shopMenu .categorie .card {
   background: #fff;
-  margin: 1rem;
-  padding: 1rem;
+  margin: 1rem 0rem 1rem 1rem;
   border-radius: 10px;
   display: flex;
   box-shadow: 0.25rem 0.25rem 0.5rem rgba(0, 0, 0, 0.125);
   overflow: hidden;
-  position: relative;
+  max-width: 85%;
 }
 .shopMenu .categorie .card__header {
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
   flex: 1;
+  padding: 1rem 0rem 1rem 1rem;
 }
 .shopMenu .categorie .card__title {
   margin: 0;
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
-  width: 70%;
 }
 .shopMenu .categorie .card__desc {
   margin: 0;
@@ -424,7 +422,7 @@
   display: flex;
   justify-content: flex-end;
   align-items: flex-end;
-  padding-left: 0.5rem;
+  padding: 1rem 1rem 1rem 1rem;
 }
 .shopMenu .categorie .card__button {
   background-color: #99E2D0;
@@ -449,10 +447,20 @@
   transition-duration: 0.5s;
 }
 .shopMenu .categorie .card:hover .card__button {
-  margin-right: -1rem;
+  margin: 0;
 }
 .shopMenu .categorie .card:hover .card__icon {
   transform: rotate(360deg);
+}
+@media (max-width: 1024px) {
+  .shopMenu .categorie .card {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 560px) {
+  .shopMenu .categorie .card {
+    grid-template-columns: repeat(1, 1fr);
+  }
 }
 @media (max-width: 1024px) {
   .shopMenu {
