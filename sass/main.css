@@ -160,6 +160,7 @@
 }
 .footer__container .logo {
   font-family: Shrikhand, "cursive";
+  font-weight: 500;
 }
 .footer__container ul {
   list-style: none;
