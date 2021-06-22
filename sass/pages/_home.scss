@@ -44,7 +44,7 @@
 
     &__step{
         padding: 1.5rem;
-        margin: 1rem 1.50rem 1rem 1.50rem;
+        margin: 1rem 1.50rem 1rem 1.75rem;
         box-shadow: 0.25rem 0.25rem 0.5rem rgba(0,0,0,.125);
         border-radius: 1.25rem;
         background-color: #f6f6f6;
@@ -116,6 +116,7 @@
         box-shadow: 0 3px 6px rgb(0 0 0 / 16%), 0 3px 6px rgb(0 0 0 / 23%);
         margin-bottom: 15px;
         transition: 0.2s ease-in-out;
+        cursor: pointer;
 
         a{
             text-decoration: none;

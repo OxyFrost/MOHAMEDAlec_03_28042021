@@ -30,6 +30,9 @@
     column-gap: 1rem;
 
     .categorie{
+        max-width: 100%;
+        overflow: hidden;
+        padding: 0 1rem;
 
         &__title{
             text-transform: uppercase;
@@ -43,58 +46,50 @@
                 bottom: -10px;
                 position: absolute;
                 height: 4px !important;
-                width: 15%;
+                width: 3rem;
                 background-color: $third-color;
-                transition: 0.4s ease-out all .1s;
             }
 
-            &:hover{
-                &::after{
-                    width: 25%;
-                    transition: 0.5s ease all;
-                }
-
-            }
         }
 
         .card{
             background: #fff;
-            margin: 1rem 0rem 1rem 1rem;
+            margin: 1rem 0;
             border-radius: 10px;
-            display: flex;
             box-shadow: 0.25rem 0.25rem 0.5rem rgba(0,0,0,.125);
+            padding: 1rem;
+            display: flex;
             overflow: hidden;
-            max-width: 85%;
+            cursor: pointer;
+            max-width: 100%;
 
-            &__header{
+            &__header {
                 white-space: nowrap;
                 text-overflow: ellipsis;
                 overflow: hidden;
                 flex: 1;
-                padding: 1rem 0rem 1rem 1rem;
-
             }
 
-            &__title{
+            &__title {
                 margin: 0;
                 white-space: nowrap;
                 text-overflow: ellipsis;
                 overflow: hidden;
             }
 
-            &__desc{
+            &__desc {
                 margin: 0;
+                white-space: nowrap;
                 text-overflow: ellipsis;
                 overflow: hidden;
-                white-space: nowrap;
             }
 
-            &__price{
-                font-weight: 700;
+            &__price {
+                font-weight: bold;
                 display: flex;
                 justify-content: flex-end;
                 align-items: flex-end;
-                padding: 1rem 1rem 1rem 1rem;
+                padding-left: 0.5rem;
             }
 
             &__button{
@@ -124,17 +119,18 @@
                 transition-duration: .5s;
             }
 
-            &:hover{
+            &:hover {
 
-                .card__button{
-                    margin : 0;
+                .card__button {
+                    margin-right: -1rem;
                 }
 
-                .card__icon{
+                .card__icon {
                     transform: rotate(360deg);
                 }
 
             }
+
 
             @include breakpoint-tablet{
                 grid-template-columns: repeat(2,1fr);
