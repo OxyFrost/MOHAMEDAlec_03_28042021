@@ -131,7 +131,6 @@
 
             }
 
-
             @include breakpoint-tablet{
                 grid-template-columns: repeat(2,1fr);
             }
@@ -156,15 +155,15 @@
 }
 
     .fadeIn-1 {
-        animation: fadeIn 1s;
+        animation: fadeIn 2.50s;
     }
 
     .fadeIn-2 {
-        animation: fadeIn 1.50s;
+        animation: fadeIn 5s;
     }
 
     .fadeIn-3 {
-        animation: fadeIn 2s;
+        animation: fadeIn 6.75s;
     }
 
 
