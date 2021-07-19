@@ -399,7 +399,6 @@
   margin: 1rem 0;
   border-radius: 10px;
   box-shadow: 0.25rem 0.25rem 0.5rem rgba(0, 0, 0, 0.125);
-  padding: 1rem;
   display: flex;
   overflow: hidden;
   cursor: pointer;
@@ -409,6 +408,7 @@
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
+  margin: 1rem 0 1rem 1rem;
   flex: 1;
 }
 .shopMenu .categorie .card__title {
@@ -428,11 +428,11 @@
   display: flex;
   justify-content: flex-end;
   align-items: flex-end;
-  padding-left: 0.5rem;
+  margin: 0 1rem 1rem 0.5rem;
 }
 .shopMenu .categorie .card__button {
   background-color: #99E2D0;
-  margin: -1rem -5rem -1rem 1rem;
+  margin-right: -4rem;
   width: 4rem;
   display: flex;
   align-items: center;
@@ -453,7 +453,7 @@
   transition-duration: 0.5s;
 }
 .shopMenu .categorie .card:hover .card__button {
-  margin-right: -1rem;
+  margin-right: 0;
 }
 .shopMenu .categorie .card:hover .card__icon {
   transform: rotate(360deg);
