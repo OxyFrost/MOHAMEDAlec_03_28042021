@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Shrikhand&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 @keyframes circle-sparkle {
   from {
     opacity: 0.3;
@@ -33,7 +34,7 @@
     opacity: 0;
   }
   100% {
-    bottom: 0px;
+    bottom: 0;
     opacity: 1;
   }
 }
@@ -46,10 +47,7 @@
   justify-content: center;
   width: 100%;
   min-height: 100%;
-  margin: 0;
-  padding: 0;
-  animation: loader-page 2.25s ease-in-out normal forwards;
-  opacity: 1;
+  animation: loader-page 2.5s ease-in-out forwards;
   background: #353535;
 }
 .loader-container .logo-loader {
@@ -110,7 +108,7 @@
   transition: transform 0.6s linear, opacity 0.6s linear;
   background: linear-gradient(190deg, #9356DC 0%, #FF79DA 95%);
   -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: transparent;
 }
 .iconLike:hover {
   cursor: pointer;
@@ -207,7 +205,8 @@
   cursor: pointer;
 }
 .button:hover {
-  transform: scale(1.1, 1.1);
+  background: linear-gradient(175deg, rgba(255, 121, 218, 0.75) 10%, rgba(147, 86, 220, 0.75) 95%);
+  box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.6);
 }
 
 .fonction__title {
@@ -400,7 +399,6 @@
   margin: 1rem 0;
   border-radius: 10px;
   box-shadow: 0.25rem 0.25rem 0.5rem rgba(0, 0, 0, 0.125);
-  padding: 1rem;
   display: flex;
   overflow: hidden;
   cursor: pointer;
@@ -410,6 +408,7 @@
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
+  margin: 1rem 0 1rem 1rem;
   flex: 1;
 }
 .shopMenu .categorie .card__title {
@@ -429,11 +428,11 @@
   display: flex;
   justify-content: flex-end;
   align-items: flex-end;
-  padding-left: 0.5rem;
+  margin: 0 1rem 1rem 0.5rem;
 }
 .shopMenu .categorie .card__button {
   background-color: #99E2D0;
-  margin: -1rem -5rem -1rem 1rem;
+  margin-right: -4rem;
   width: 4rem;
   display: flex;
   align-items: center;
@@ -454,7 +453,7 @@
   transition-duration: 0.5s;
 }
 .shopMenu .categorie .card:hover .card__button {
-  margin-right: -1rem;
+  margin-right: 0;
 }
 .shopMenu .categorie .card:hover .card__icon {
   transform: rotate(360deg);
@@ -481,15 +480,15 @@
 }
 
 .fadeIn-1 {
-  animation: fadeIn 1s;
+  animation: fadeIn 2.5s;
 }
 
 .fadeIn-2 {
-  animation: fadeIn 1.5s;
+  animation: fadeIn 5s;
 }
 
 .fadeIn-3 {
-  animation: fadeIn 2s;
+  animation: fadeIn 6.75s;
 }
 
 body {

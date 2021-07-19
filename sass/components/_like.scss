@@ -2,7 +2,9 @@
     margin: 15px;
     cursor: pointer;
 
-    .show{position: absolute}
+    .show{
+        position: absolute
+    }
 
     .hidden::before{
         position: relative;
@@ -11,7 +13,7 @@
         transition: transform .6s linear, opacity .6s linear;
         background: linear-gradient(190deg, $primary-color 0%, $second-color 95%);
         -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
+        color: transparent;
     }
 
     &:hover{
