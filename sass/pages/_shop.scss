@@ -152,6 +152,17 @@
     @include  breakpoint-phone{
         grid-template-columns: repeat(1,1fr);
     }
+
+
+
+}
+
+.buttonHolder{
+    text-align: center;
+
+    .button{
+        @include button();
+    }
 }
 
     .fadeIn-1 {

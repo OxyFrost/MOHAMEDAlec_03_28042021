@@ -479,6 +479,26 @@
   }
 }
 
+.buttonHolder {
+  text-align: center;
+}
+.buttonHolder .button {
+  width: 220px;
+  height: 50px;
+  color: #FFFFFF;
+  border: none;
+  border-radius: 30px;
+  background: linear-gradient(175deg, #FF79DA 10%, #9356DC 95%);
+  box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.3);
+  margin: 15px;
+  transition: all 0.4s;
+  cursor: pointer;
+}
+.buttonHolder .button:hover {
+  background: linear-gradient(175deg, rgba(255, 121, 218, 0.75) 10%, rgba(147, 86, 220, 0.75) 95%);
+  box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.6);
+}
+
 .fadeIn-1 {
   animation: fadeIn 2.5s;
 }
